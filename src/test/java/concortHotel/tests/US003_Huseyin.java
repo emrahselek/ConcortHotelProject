@@ -1,4 +1,5 @@
 package concortHotel.tests;
 
-public class huseyin {
+public class US003_Huseyin {
+
 }
