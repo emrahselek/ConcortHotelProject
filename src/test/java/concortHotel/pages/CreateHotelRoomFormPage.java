@@ -3,13 +3,11 @@ package concortHotel.pages;
 import concortHotel.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
-public class MainPage {
+public class CreateHotelRoomFormPage {
 
-    public MainPage(){
+    public CreateHotelRoomFormPage(){
         PageFactory.initElements(Driver.getDriver(),this);
 
     }
-
-
 
 }
