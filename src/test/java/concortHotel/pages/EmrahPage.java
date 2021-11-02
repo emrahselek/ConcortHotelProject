@@ -5,5 +5,6 @@ public class EmrahPage {
         System.out.println("emrah");
         System.out.println("seni seviyorum emrah");
         System.out.println("Huseyin Ozkaya");
+        System.out.println("zaman");
     }
 }
