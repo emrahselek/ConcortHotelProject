@@ -9,4 +9,5 @@ public class MainPage {
         PageFactory.initElements(Driver.getDriver(),this);
 
     }
+
 }
