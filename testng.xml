@@ -4,8 +4,8 @@
     <test name="Regression">
         <classes>
             <class name="concortHotel.tests.US003_Huseyin"/>
-            <class name="concortHotel.tests.US004_Huseyin"/>
-            <class name="concortHotel.tests.US005_Huseyin"/>
+            <class name="concortHotel.tests.US005_Emrah"/>
+            <class name="concortHotel.tests.US009_Sedef"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
