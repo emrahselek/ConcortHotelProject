@@ -9,5 +9,8 @@
         <module name="ConcortHotelProject" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ConcortHotelProject" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
