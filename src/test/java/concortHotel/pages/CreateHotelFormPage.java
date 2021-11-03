@@ -58,4 +58,7 @@ public class CreateHotelFormPage {
 
     @FindBy(xpath = "//label[.='Select Group']")
     public WebElement selectGroupMessage;
+
+
+
 }
