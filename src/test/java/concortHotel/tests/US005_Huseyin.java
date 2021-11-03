@@ -14,8 +14,8 @@ public class US005_Huseyin {
     public void deneme() throws IOException {
         Driver.getDriver().get("https://www.google.com/");
         GoogleMain googleMain = new GoogleMain();
-        googleMain.googleSearchBox.sendKeys("iphone" + Keys.RETURN);
-        boolean isTrue = Driver.getDriver().getTitle().contains("huseyin");
+        googleMain.googleSearchBox.sendKeys("keci" + Keys.RETURN);
+        boolean isTrue = Driver.getDriver().getTitle().contains("keci");
         if (!isTrue) {
             ReusableMethods.getScreenshot("huseyin");
             System.out.println("Title assertion doesn't match");
@@ -23,8 +23,8 @@ public class US005_Huseyin {
         Assert.assertTrue(isTrue);
 
         Driver.getDriver().get("https://www.google.com/");
-        googleMain.googleSearchBox.sendKeys("iphone" + Keys.RETURN);
-        boolean isOk = Driver.getDriver().getTitle().contains("huseyin");
+        googleMain.googleSearchBox.sendKeys("aslan" + Keys.RETURN);
+        boolean isOk = Driver.getDriver().getTitle().contains("aslan");
         if (!isOk) {
             ReusableMethods.getScreenshot("iphone");
             System.out.println("Title assertion doesn't match");
