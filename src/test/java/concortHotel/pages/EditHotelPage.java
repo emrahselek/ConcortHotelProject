@@ -3,9 +3,9 @@ package concortHotel.pages;
 import concortHotel.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
-public class CreateHotelFormPage {
+public class EditHotelPage {
 
-    public CreateHotelFormPage(){
+    public EditHotelPage(){
         PageFactory.initElements(Driver.getDriver(),this);
 
     }
