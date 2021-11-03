@@ -19,7 +19,7 @@ public class US003_Huseyin {
         Reporter.log("We used Google Chrome Ver 80 for this test");
         String testTitle = "Free QA Automation Tools For Everyone";
         googleMain.googleSearchBox.sendKeys("iphone"+ Keys.RETURN);
-        boolean isTrue = Driver.getDriver().getTitle().contains("iphone");
+        boolean isTrue = Driver.getDriver().getTitle().contains("oppps");
         if(!isTrue){
             ReusableMethods.getScreenshot("huseyin");
             System.out.println("Title assertion doesn't match");
