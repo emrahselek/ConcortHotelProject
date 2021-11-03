@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class US005_Emrah {
+<<<<<<< HEAD
     @Test()
     public void deneme() throws IOException {
         Driver.getDriver().get("https://www.google.com/");
@@ -35,6 +36,10 @@ public class US005_Emrah {
         Assert.assertTrue(isOk);
 
 
+=======
+  
+  
+>>>>>>> main
 
     }
 }
