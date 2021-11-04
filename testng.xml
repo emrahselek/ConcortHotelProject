@@ -4,7 +4,6 @@
     <test name="Smoke">
         <classes>
             <class name="concortHotel.tests.US003_Huseyin"/>
-            <class name="concortHotel.tests.US009_Sedef"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
