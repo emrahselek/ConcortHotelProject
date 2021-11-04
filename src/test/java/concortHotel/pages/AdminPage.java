@@ -12,8 +12,6 @@ public class AdminPage {
     }
 
 
-    
-    
 
 
     @FindBy(xpath = "//span[.='Hotel Management']")
