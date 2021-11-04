@@ -163,7 +163,7 @@ public class US004_Sanal_Hotel_Creation {
         Assert.assertTrue(createHotelFormPage.selectGroupMessage.isDisplayed());
     }
 
-    @Test(priority = 8)
+    @Test()
     public void us04_tc008() {
         adminPage.hotelManagement.click();
         adminPage.hotelListLink.click();
