@@ -11,6 +11,11 @@ public class AdminPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
+    
+    
+
+
     @FindBy(xpath = "//span[.='Hotel Management']")
     public WebElement hotelManagement;
 
