@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -246,7 +247,7 @@ public class US003_Huseyin {
     }
 
     @Test
-    public void tc_00010(){
+    public void tc_0010(){
         registerPage = new RegisterPage();
         String name = faker.name().firstName();
         registerPage.userName.sendKeys(name+"12");
@@ -269,7 +270,7 @@ public class US003_Huseyin {
     }
 
     @Test
-    public void tc_00011(){
+    public void tc_0011(){
         registerPage = new RegisterPage();
         String name = faker.name().firstName();
         registerPage.userName.sendKeys(name+"12");
@@ -292,7 +293,7 @@ public class US003_Huseyin {
     }
 
     @Test
-    public void tc_00012() throws ParseException {
+    public void tc_0012() {
         registerPage = new RegisterPage();
         String name = faker.name().firstName();
         registerPage.userName.sendKeys(name+"12");
@@ -324,13 +325,13 @@ public class US003_Huseyin {
         boolean isSuccessful =registerPage.messageWhenSaveClicked.getText().contains("inserted successfully");
 
         if(isSuccessful==true && period.getYears()<18){
-            assertFalse(isSuccessful,"Age is smaller than 18. Expected bigger than 18");
+            assertFalse(isSuccessful,"Age is smaller than 18. Law requires age should be bigger than 18");
         }
 
     }
 
     @Test
-    public void tc_00013(){
+    public void tc_0013(){
         registerPage = new RegisterPage();
         String name = faker.name().firstName();
         registerPage.userName.sendKeys(name+"12");
@@ -361,6 +362,54 @@ public class US003_Huseyin {
         if(isSuccessful==true && dateRegistered.isAfter(currentDate)){
             assertFalse(isSuccessful,"Date of Birth can not be after Today's date");
         }
+
+    }
+
+    @DataProvider
+    public Object[][] getData(){
+
+
+        String[][] userData={
+                //username,         phone,          SSN,    DrivingLicence, Country,   States,    address  ,   working sector, dob
+                {"", "1234567899","123456789", "12345", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "","123456789", "12345", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","", "12345", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "Select state","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "New York","", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "New York","123 Apple Street", "", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "New York","123 Apple Street", "IT Manager", ""},
+
+
+
+
+
+        };
+        return userData;
+    }
+
+    @Test(dataProvider = "getData")
+    public void tc_0014(String fullName,String phoneNumber,String SSN,String drivingLicence,String country, String states, String address, String workingSector, String dob){
+        registerPage = new RegisterPage();
+        String name = faker.name().firstName();
+        registerPage.userName.sendKeys(name+"12");
+        registerPage.password.sendKeys("Sa174656!");
+        registerPage.email.sendKeys(faker.internet().emailAddress());
+        registerPage.fullName.sendKeys(fullName);
+        registerPage.phoneNo.sendKeys(phoneNumber);
+        registerPage.socialSecurityNumber.sendKeys(SSN);
+        registerPage.drivingLicenseNo.sendKeys(drivingLicence);
+        Select selectCountry = new Select(registerPage.idCountry);
+        selectCountry.selectByVisibleText(country);
+        Select selectStates = new Select(registerPage.idState);
+        selectStates.selectByVisibleText(states);
+        registerPage.address.sendKeys(address);
+        registerPage.workingSector.sendKeys(workingSector);
+        registerPage.birthDate.sendKeys(dob);
+        registerPage.saveButton.click();
+        ReusableMethods.waitFor(1);
+        assertTrue(registerPage.errorMessage.isDisplayed());
+
 
     }
 
