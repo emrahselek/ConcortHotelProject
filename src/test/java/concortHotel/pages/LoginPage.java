@@ -21,6 +21,9 @@ public class LoginPage {
     @FindBy(id = "btnSubmit")
     public WebElement loginButton;
 
+    @FindBy(partialLinkText = "Create")
+    public WebElement createNewAccount;
+
 
 
 }
