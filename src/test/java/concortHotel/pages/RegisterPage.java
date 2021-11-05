@@ -50,4 +50,11 @@ public class RegisterPage {
     @FindBy (id = "btnSubmit")
     public WebElement saveButton;
 
+    @FindBy (xpath = "//div[@class='bootbox-body']")
+    public WebElement messageWhenSaveClicked;
+
+    @FindBy(xpath = "//label[@class='error']")
+    public  WebElement errorMessage;
+
+
 }
