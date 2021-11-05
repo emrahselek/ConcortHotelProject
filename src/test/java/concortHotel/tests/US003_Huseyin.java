@@ -53,7 +53,9 @@ public class US003_Huseyin {
     registerPage.birthDate.sendKeys("11/2/1980");
     registerPage.saveButton.click();
     ReusableMethods.waitFor(1);
-    assertTrue(registerPage.messageWhenSaveClicked.getText().contains("inserted successfully"));
+    registerPage.okButton.click();
+    ReusableMethods.waitFor(1);
+    assertTrue(registerPage.messageWhenOkClicked.getText().contains("inserted successfully"));
 
     }
 
@@ -77,7 +79,9 @@ public class US003_Huseyin {
         registerPage.birthDate.sendKeys("11/2/1980");
         registerPage.saveButton.click();
         ReusableMethods.waitFor(1);
-        assertTrue(registerPage.messageWhenSaveClicked.getText().contains("inserted successfully"));
+        registerPage.okButton.click();
+        ReusableMethods.waitFor(1);
+        assertTrue(registerPage.messageWhenOkClicked.getText().contains("inserted successfully"));
 
     }
 

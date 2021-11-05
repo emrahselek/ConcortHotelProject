@@ -56,5 +56,10 @@ public class RegisterPage {
     @FindBy(xpath = "//label[@class='error']")
     public  WebElement errorMessage;
 
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public  WebElement okButton;
+
+    @FindBy(id = "DescriptionDiv")
+    public  WebElement messageWhenOkClicked;
 
 }
