@@ -47,8 +47,7 @@ public class US003_Huseyin {
     registerPage.phoneNo.sendKeys("1234567899");
     registerPage.socialSecurityNumber.sendKeys("123456789");
     registerPage.drivingLicenseNo.sendKeys("12345");
-    Select selectCountry = new Select(registerPage.idCountry);
-    selectCountry.selectByVisibleText("Canada");
+    ReusableMethods.selectFromDropDown(registerPage.idCountry,"Canada");
     registerPage.address.sendKeys("123 Apple Street");
     registerPage.workingSector.sendKeys("IT");
     registerPage.birthDate.sendKeys("11/2/1980");
