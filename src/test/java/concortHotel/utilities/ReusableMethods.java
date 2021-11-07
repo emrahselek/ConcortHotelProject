@@ -175,4 +175,8 @@ public class ReusableMethods {
         Select selectElement = new Select(selectData);
         selectElement.selectByIndex(indexNumber);
     }
+
+    public static boolean isTrue(WebElement webElement, String checkText){
+        return webElement.getText().contains(checkText);
+    }
 }
