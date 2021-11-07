@@ -4,6 +4,7 @@ import concortHotel.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.DataProvider;
 
 public class RegisterPage {
 
@@ -62,4 +63,23 @@ public class RegisterPage {
     @FindBy(id = "DescriptionDiv")
     public  WebElement messageWhenOkClicked;
 
+
+
+    public Object[][] requiredDataForNegativeTest(){
+
+
+        String[][] userData={
+                //username,         phone,          SSN,    DrivingLicence, Country,   States,    address  ,   working sector, dob
+                {"", "1234567899","123456789", "12345", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "","123456789", "12345", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","", "12345", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "Select state","123 Apple Street", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "New York","", "IT Manager", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "New York","123 Apple Street", "", "11/2/1980"},
+                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "New York","123 Apple Street", "IT Manager", ""},
+
+        };
+        return userData;
+    }
 }

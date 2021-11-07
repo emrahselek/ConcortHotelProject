@@ -361,27 +361,11 @@ public class US003_Huseyin {
     }
 
     @DataProvider
-    public Object[][] getData(){
-
-
-        String[][] userData={
-                //username,         phone,          SSN,    DrivingLicence, Country,   States,    address  ,   working sector, dob
-                {"", "1234567899","123456789", "12345", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
-                {"Thomas Watson", "","123456789", "12345", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
-                {"Thomas Watson", "1234567899","", "12345", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
-                {"Thomas Watson", "1234567899","123456789", "", "United States", "New York","123 Apple Street", "IT Manager", "11/2/1980"},
-                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "Select state","123 Apple Street", "IT Manager", "11/2/1980"},
-                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "New York","", "IT Manager", "11/2/1980"},
-                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "New York","123 Apple Street", "", "11/2/1980"},
-                {"Thomas Watson", "1234567899","123456789", "12345", "United States", "New York","123 Apple Street", "IT Manager", ""},
-
-
-
-
-
-        };
-        return userData;
+    public Object[][] getData() {
+        registerPage = new RegisterPage();
+        return registerPage.requiredDataForNegativeTest();
     }
+
 
     @Test(dataProvider = "getData")
     public void tc_0014(String fullName,String phoneNumber,String SSN,String drivingLicence,String country, String states, String address, String workingSector, String dob){
