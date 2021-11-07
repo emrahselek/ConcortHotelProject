@@ -30,8 +30,6 @@ public class US005_Emrah {
     @BeforeMethod
     public void setup(){
         Driver.getDriver().get(ConfigReader.getProperty("app_url_qa"));
-        Driver.getDriver().manage().window().maximize();
-        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         mainPage = new MainPage();
         loginPage = new LoginPage();
         adminPage = new AdminPage();
