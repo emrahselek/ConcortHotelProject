@@ -50,42 +50,40 @@ public class US001_Olcay {
     public void us001_tc002() {
         Driver.getDriver().get(ConfigReader.getProperty("app_url_qa"));
         mainPage = new MainPage();
-        SoftAssert softAssert = new SoftAssert();
         mainPage.bottomBlog.click();
         System.out.println(Driver.getDriver().getTitle());
         System.out.println(Driver.getDriver().getCurrentUrl());
         String blogTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(blogTitle.contains("Blog"));
+        Assert.assertFalse(blogTitle.contains("Blog"));
         mainPage.bottomRooms.click();
         String roomsTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(roomsTitle.contains("Rooms"));
+        Assert.assertFalse(roomsTitle.contains("Rooms"));
         mainPage.bottomAmenitiesTest.click();
         String amenitiesTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(amenitiesTitle.contains("Amenities"));
+        Assert.assertFalse(amenitiesTitle.contains("Amenities"));
         mainPage.bottomGiftCard.click();
         String giftCardTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(giftCardTitle.contains("Gift"));
+        Assert.assertFalse(giftCardTitle.contains("Gift"));
         ReusableMethods.waitFor(1);
         mainPage.bottomCareer.click();
         String careerTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(careerTitle.contains("Career"));
+        Assert.assertFalse(careerTitle.contains("Career"));
         mainPage.bottomAboutUs.click();
         String aboutUsTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(aboutUsTitle.contains("About"));
+        Assert.assertFalse(aboutUsTitle.contains("About"));
         mainPage.bottomContactUs.click();
         String contactUsTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(contactUsTitle.contains("Contact"));
+        Assert.assertFalse(contactUsTitle.contains("Contact"));
         ReusableMethods.waitFor(1);
         mainPage.bottomServices.click();
         String servicesTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(servicesTitle.contains("Services"));
+        Assert.assertFalse(servicesTitle.contains("Services"));
         mainPage.bottomPhoneNumber.click();
         String phoneTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(phoneTitle.contains("Phone"));
+        Assert.assertFalse(phoneTitle.contains("Phone"));
         mainPage.bottomEmailLink.click();
         String emailTitle = Driver.getDriver().getTitle();
-        softAssert.assertTrue(emailTitle.contains("Email"));
-        softAssert.assertAll();
+        Assert.assertFalse(emailTitle.contains("Email"));
 
     }
 
