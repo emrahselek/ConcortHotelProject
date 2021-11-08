@@ -3,8 +3,6 @@
     <test name="Test 1">
         <classes>
             <class name="concortHotel.tests.US003_Huseyin"/>
-            <class name="concortHotel.tests.US005_Emrah"/>
-            <class name="concortHotel.tests.US009_Sedef"/>
         </classes>
     </test> <!-- Test -->
     <test name="Test 2">
