@@ -23,4 +23,8 @@ public class HotelListPage {
     @FindBy(xpath = "//tbody/tr[1]/td[8]/a[1]")
     public WebElement details;
 
+    @FindBy(id ="lkpGroups")
+    public WebElement idGroupDropdown;
+
+
 }
