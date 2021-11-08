@@ -25,6 +25,8 @@ public class US005_Emrah {
     EditHotelPage editHotelPage;
     Select select;
     Faker faker = new Faker();
+    String window1Handle;
+    String window2Handle;
 
 
     @BeforeMethod
@@ -43,7 +45,7 @@ public class US005_Emrah {
         adminPage.hotelListLink.click();
         hotelListPage.details.click();
         ReusableMethods.waitFor(1);
-        String window1Handle = Driver.getDriver().getWindowHandle();
+        window1Handle = Driver.getDriver().getWindowHandle();
         Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
         for(String eachWindowsHandle:allWindowHandles){
             if(!eachWindowsHandle.equals(window1Handle)){
@@ -51,6 +53,7 @@ public class US005_Emrah {
                 break;
             }
         }
+        window2Handle = Driver.getDriver().getWindowHandle();
     }
 
     @Test
@@ -103,13 +106,21 @@ public class US005_Emrah {
         Assert.assertTrue(successfullymessage.booleanValue());
     }
 
-//    @Test
-//    public void us005_tc006() {
-//        select = new Select(editHotelPage.group);
-//        String tt = editHotelPage.group.getText();
-//        System.out.println(tt);
-//    }
+    @Test
+    public void us005_tc006() {
+        String window2Handle = Driver.getDriver().getWindowHandle();
+        Driver.getDriver().switchTo().window(window1Handle);
+        select = new Select(hotelListPage.idGroupDropdown);
+        select.selectByIndex(2);
+        hotelListPage.searchButton.click();
+        ReusableMethods.waitFor(2);
+        hotelListPage.details.click();
+        Driver.getDriver().switchTo().window(window2Handle);
+        select = new Select(editHotelPage.idGroupDropdown);
+        select.selectByIndex(1);
+        editHotelPage.save.click();
 
+    }
 
     @Test
     public void us005_tc007() {
@@ -129,4 +140,5 @@ public class US005_Emrah {
         }
         Driver.closeDriver();
     }
+
 }

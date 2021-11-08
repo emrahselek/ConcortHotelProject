@@ -27,11 +27,11 @@ public class EditHotelPage {
     @FindBy(xpath = "//input[@id='Email']")
     public WebElement email;
 
-    @FindBy(xpath = "//select[@id='IDGroup']")
-    public WebElement group;
-
     @FindBy(xpath = "(//button[.='Save'])[1]")
     public WebElement save;
+
+    @FindBy(id="IDGroup")
+    public WebElement idGroupDropdown;
 
 
 
