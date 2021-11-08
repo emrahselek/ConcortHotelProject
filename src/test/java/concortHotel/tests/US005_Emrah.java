@@ -108,17 +108,19 @@ public class US005_Emrah {
 
     @Test
     public void us005_tc006() {
-        String window2Handle = Driver.getDriver().getWindowHandle();
         Driver.getDriver().switchTo().window(window1Handle);
         select = new Select(hotelListPage.idGroupDropdown);
         select.selectByIndex(2);
         hotelListPage.searchButton.click();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         hotelListPage.details.click();
         Driver.getDriver().switchTo().window(window2Handle);
         select = new Select(editHotelPage.idGroupDropdown);
         select.selectByIndex(1);
         editHotelPage.save.click();
+        ReusableMethods.waitFor(1);
+        Boolean successfullymessage = Driver.getDriver().getPageSource().contains("Hotel was updated successfully");
+        Assert.assertTrue(successfullymessage.booleanValue());
 
     }
 
