@@ -24,6 +24,12 @@ public class LoginPage {
     @FindBy(partialLinkText = "Create")
     public WebElement createNewAccount;
 
+    @FindBy (id="UserName")
+    public WebElement userName;
+
+    @FindBy(id="Password")
+    public WebElement passWord;
+
 
 
 }

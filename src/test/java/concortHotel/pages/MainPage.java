@@ -65,6 +65,9 @@ public class MainPage {
     @FindBy(xpath = "//span[.='info@concorthotel.com']")
     public WebElement bottomEmailLink;
 
+    @FindBy(linkText = "Log in")
+    public WebElement mainPageLoginLink;
+
     public static void setUp(String username, String password) {
 
         LoginPage loginPage = new LoginPage();
