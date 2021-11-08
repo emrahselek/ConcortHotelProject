@@ -12,8 +12,6 @@ public class AdminPage {
     }
 
 
-
-
     @FindBy(xpath = "//span[.='Hotel Management']")
     public WebElement hotelManagement;
 
@@ -22,5 +20,11 @@ public class AdminPage {
 
     @FindBy(xpath = "//span[@class='username username-hide-on-mobile']")
     public WebElement usernameRightTop;
+
+    @FindBy(xpath = "//span[.= 'Hotel Management']")
+    public WebElement hotelManagementTab;
+
+    @FindBy(partialLinkText = "Room reservations")
+    public WebElement roomReservationsLink;
 
 }
