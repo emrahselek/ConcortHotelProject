@@ -175,4 +175,9 @@ public class ReusableMethods {
         Select selectElement = new Select(selectData);
         selectElement.selectByIndex(indexNumber);
     }
+
+    public static void seletFromDropDown (WebElement selectData, String value){
+        Select selectElement = new Select(selectData);
+        selectElement.selectByValue(value);
+    }
 }
