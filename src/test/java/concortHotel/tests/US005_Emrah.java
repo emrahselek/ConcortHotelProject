@@ -1,5 +1,6 @@
 package concortHotel.tests;
 
+
 import com.github.javafaker.Faker;
 import concortHotel.pages.*;
 import concortHotel.utilities.ConfigReader;
