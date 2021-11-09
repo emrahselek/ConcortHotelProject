@@ -10,9 +10,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.List;
 
 public class US009_Sedef {
@@ -57,9 +60,6 @@ public class US009_Sedef {
         Select select = new Select(editRoomReservationPage.idHotelRoom);
         select.selectByIndex(5);
 
-        ReusableMethods.waitFor(1);
-        editRoomReservationPage.saveButton.click();
-        Driver.closeDriver();
 
     }
     @Test
@@ -71,9 +71,7 @@ public class US009_Sedef {
         Select select1 = new Select(editRoomReservationPage.idUser);
         select1.selectByIndex(14);
 
-        ReusableMethods.waitFor(1);
-        editRoomReservationPage.saveButton.click();
-        Driver.closeDriver();
+
     }
 
     @Test
@@ -85,9 +83,6 @@ public class US009_Sedef {
 
         editRoomReservationPage.price.sendKeys("375");
 
-        ReusableMethods.waitFor(1);
-        editRoomReservationPage.saveButton.click();
-        Driver.closeDriver();
 
     }
 
@@ -99,9 +94,7 @@ public class US009_Sedef {
          editRoomReservationPage.dateEnd.clear();
          editRoomReservationPage.dateEnd.sendKeys("12/20/2020");
 
-        ReusableMethods.waitFor(1);
-        editRoomReservationPage.saveButton.click();
-        Driver.closeDriver();
+
 
     }
 
@@ -113,43 +106,45 @@ public class US009_Sedef {
 
          editRoomReservationPage.contactNameSurname.sendKeys("Sedef Gunerhan");
 
-         ReusableMethods.waitFor(1);
-         editRoomReservationPage.saveButton.click();
-         Driver.closeDriver();
 
     }
 
     @Test
     public void US009_testCase6() {
 
-         editRoomReservationPage = new EditRoomReservationPage();
+        editRoomReservationPage = new EditRoomReservationPage();
 
-         editRoomReservationPage.contactEmail.clear();
-         editRoomReservationPage.contactEmail.sendKeys("SedefGnrhan@gmail.com");
-
-         ReusableMethods.waitFor(1);
-         editRoomReservationPage.saveButton.click();
-         Driver.closeDriver();
-
+        editRoomReservationPage.contactEmail.clear();
+        editRoomReservationPage.contactEmail.sendKeys("SedefGnrhan@gmail.com");
     }
 
     @Test
     public void US009_testCase7() {
 
-         editRoomReservationPage = new EditRoomReservationPage();
+        editRoomReservationPage = new EditRoomReservationPage();
 
-         ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(2);
 
-         editRoomReservationPage.notes.clear();
-         editRoomReservationPage.notes.sendKeys("Please bring extra mattress to the room");
+        editRoomReservationPage.notes.clear();
+        editRoomReservationPage.notes.sendKeys("Please bring extra mattress to the room");
+
+    }
+         @AfterMethod
+         public void tearDown(ITestResult result) throws IOException {
 
          ReusableMethods.waitFor(1);
          editRoomReservationPage.saveButton.click();
+             System.out.println("the save button works");
+
+             if (ITestResult.FAILURE == result.getStatus()) {
+                 ReusableMethods.getScreenshot("US009_Sedef");
+
+             }
+             else {
+                 System.out.println("the reservation is saved. there is no pop up message");
+             }
          Driver.closeDriver();
 
-
-
     }
-
 
 }
