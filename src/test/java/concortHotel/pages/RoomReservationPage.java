@@ -12,11 +12,16 @@ public class RoomReservationPage {
 
     }
 
-    @FindBy(xpath = "//tbody/tr[9]/td[14]")
+    //@FindBy(xpath = "//tbody/tr[9]/td[14]")
+    @FindBy(xpath = "//tbody//tr[9]//td[14]/a")
     public WebElement details;
 
-    @FindBy(xpath = "(//a[@class='btn btn-xs default'])[9]")
-    public WebElement details1;
+    //    @FindBy(xpath = "(//a[@class='btn btn-xs default'])[9]")
+//    public WebElement details1;
+////
+////    @FindBy(xpath =//tbody//tr[1]//td[8] )
+////
+
 
 
 
