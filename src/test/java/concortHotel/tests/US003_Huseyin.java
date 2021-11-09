@@ -39,7 +39,9 @@ public class US003_Huseyin {
     String name = faker.name().firstName();
     registerPage.userName.sendKeys(name+"12");
     registerPage.password.sendKeys("Sa174656!");
-    registerPage.email.sendKeys(faker.internet().emailAddress());
+        String email = faker.internet().emailAddress();
+    registerPage.email.sendKeys(email);
+
     registerPage.fullName.sendKeys(name+ " Araba");
     registerPage.phoneNo.sendKeys("1234567899");
     registerPage.socialSecurityNumber.sendKeys("123456789");
@@ -53,7 +55,8 @@ public class US003_Huseyin {
     registerPage.okButton.click();
     ReusableMethods.waitFor(1);
     assertTrue(ReusableMethods.isTrue(registerPage.messageWhenOkClicked,"inserted successfully"));
-
+        System.out.println(name+"12");
+        System.out.println(email);
 
     }
 
