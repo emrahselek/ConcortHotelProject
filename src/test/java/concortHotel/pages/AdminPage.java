@@ -27,4 +27,10 @@ public class AdminPage {
     @FindBy(partialLinkText = "Room reservations")
     public WebElement roomReservationsLink;
 
+    //@FindBy(xpath ="//span[.='System Management']")
+//public WebElement systemManagement;
+
+    @FindBy(xpath="//a[@href='/admin/HotelRoomAdmin']")
+    public WebElement hotelRoomsTab;
+
 }
