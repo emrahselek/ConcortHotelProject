@@ -3,6 +3,8 @@
 <suite name="Testing Google Apps">
     <test name="Smoke">
         <classes>
+            <class name="concortHotel.tests.US001_Olcay"/>
+            <class name="concortHotel.tests.US002_Abdurrahman_Login_Page"/>
             <class name="concortHotel.tests.US003_Huseyin"/>
         </classes>
     </test> <!-- Test -->
