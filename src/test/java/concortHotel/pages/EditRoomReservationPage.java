@@ -38,6 +38,4 @@ public class EditRoomReservationPage {
     @FindBy(xpath = "(//button[.='Save'])[1]")
     public WebElement saveButton;
 
-    //@FindBy(xpath = "(//button[.='Save'])[1]")
-    //  @FindBy(id="btnSubmit")
 }
