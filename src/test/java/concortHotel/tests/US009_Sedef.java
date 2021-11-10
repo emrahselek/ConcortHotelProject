@@ -26,8 +26,8 @@ public class US009_Sedef {
     RoomReservationPage roomReservationPage;
     EditRoomReservationPage editRoomReservationPage;
 
+    @BeforeMethod
 
-     @BeforeMethod
     public void roomReservationUpdate() {
 
         Driver.getDriver().get(ConfigReader.getProperty("app_url_Prod"));
@@ -89,10 +89,15 @@ public class US009_Sedef {
     @Test
     public void US009_testCase4() {
 
+
          editRoomReservationPage = new EditRoomReservationPage();
 
          editRoomReservationPage.dateEnd.clear();
          editRoomReservationPage.dateEnd.sendKeys("12/20/2020");
+        editRoomReservationPage = new EditRoomReservationPage();
+
+        editRoomReservationPage.dateEnd.clear();
+        editRoomReservationPage.dateEnd.sendKeys("12/20/2020");
 
 
 
@@ -101,10 +106,17 @@ public class US009_Sedef {
     @Test
     public void US009_testCase5() {
 
+
          editRoomReservationPage = new EditRoomReservationPage();
          editRoomReservationPage.contactNameSurname.clear();
 
          editRoomReservationPage.contactNameSurname.sendKeys("Sedef Gunerhan");
+
+        editRoomReservationPage = new EditRoomReservationPage();
+        editRoomReservationPage.contactNameSurname.clear();
+
+        editRoomReservationPage.contactNameSurname.sendKeys("Sedef Gunerhan");
+
 
 
     }
@@ -129,6 +141,7 @@ public class US009_Sedef {
         editRoomReservationPage.notes.sendKeys("Please bring extra mattress to the room");
 
     }
+
          @AfterMethod
          public void tearDown(ITestResult result) throws IOException {
 
@@ -144,6 +157,7 @@ public class US009_Sedef {
                  System.out.println("the reservation is saved. there is no pop up message");
              }
          Driver.closeDriver();
+
 
     }
 
