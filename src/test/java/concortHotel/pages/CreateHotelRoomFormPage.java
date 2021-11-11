@@ -11,6 +11,10 @@ public class CreateHotelRoomFormPage {
         PageFactory.initElements(Driver.getDriver(),this);
 
     }
+
+
+
+
     @FindBy(partialLinkText = "ADD HOTELROOM")
     public WebElement addHotelRoomLink;
     @FindBy(id = "IDHotel")
