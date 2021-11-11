@@ -139,6 +139,7 @@ public class US009_Sedef {
 
         editRoomReservationPage.notes.clear();
         editRoomReservationPage.notes.sendKeys("Please bring extra mattress to the room");
+        ReusableMethods.waitFor(3);
 
     }
 

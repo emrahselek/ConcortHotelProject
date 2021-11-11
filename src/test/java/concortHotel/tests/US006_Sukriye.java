@@ -1,5 +1,6 @@
 package concortHotel.tests;
 
+import concortHotel.utilities.ReusableMethods;
 import org.openqa.selenium.interactions.Actions;
 import concortHotel.pages.*;
 import concortHotel.utilities.ConfigReader;
@@ -395,6 +396,7 @@ public class US006_Sukriye {
         }
 
         createHotelRoomFormPage.saveButton.click();
+        ReusableMethods.waitFor(3);
 
     }
 

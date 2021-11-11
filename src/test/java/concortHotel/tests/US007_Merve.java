@@ -148,6 +148,7 @@ public class US007_Merve {
         Boolean errorMessage = Driver.getDriver().getPageSource().contains("Error");
         Assert.assertTrue(errorMessage.booleanValue());
         editHotelRoomPage.okButton.click();
+        ReusableMethods.waitFor(3);
 
     }
     @AfterMethod
