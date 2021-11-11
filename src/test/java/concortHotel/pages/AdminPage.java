@@ -11,6 +11,9 @@ public class AdminPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    //@FindBy(xpath ="//span[.='System Management']")
+    //public WebElement systemManagement;
+
 
     @FindBy(xpath = "//span[.='Hotel Management']")
     public WebElement hotelManagement;
@@ -18,16 +21,20 @@ public class AdminPage {
     @FindBy(partialLinkText = "Hotel List")
     public WebElement hotelListLink;
 
-    @FindBy(partialLinkText = "Hotel Rooms")
-    public WebElement hotelRoomsLink;
-
     @FindBy(xpath = "//span[@class='username username-hide-on-mobile']")
     public WebElement usernameRightTop;
+
+    @FindBy(xpath="//a[@href='/admin/HotelRoomAdmin']")
+    public WebElement hotelRoomsTab;
 
     @FindBy(xpath = "//span[.= 'Hotel Management']")
     public WebElement hotelManagementTab;
 
     @FindBy(partialLinkText = "Room reservations")
     public WebElement roomReservationsLink;
+
+    @FindBy(partialLinkText = "Hotel Rooms")
+    public WebElement hotelRoomsLink;
+
 
 }

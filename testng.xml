@@ -3,7 +3,13 @@
 <suite name="Testing Google Apps">
     <test name="Smoke">
         <classes>
+            <class name="concortHotel.tests.US001_Olcay"/>
+            <class name="concortHotel.tests.US002_Abdurrahman_Login_Page"/>
             <class name="concortHotel.tests.US003_Huseyin"/>
+            <class name="concortHotel.tests.US004_Sanal_Hotel_Creation"/>
+            <class name="concortHotel.tests.US005_Emrah"/>
+            <class name="concortHotel.tests.US008_Tugce"/>
+            <class name="concortHotel.tests.US009_Sedef"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

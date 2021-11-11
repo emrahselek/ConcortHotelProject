@@ -55,12 +55,4 @@ public class EditHotelRoomPage {
 
     @FindBy(xpath = "//button[@data-bb-handler='ok']")
     public WebElement okButton;
-
-
-
-
-
-
-
-
 }
