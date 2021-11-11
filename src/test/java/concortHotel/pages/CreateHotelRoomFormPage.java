@@ -12,6 +12,9 @@ public class CreateHotelRoomFormPage {
 
     }
 
+
+
+
     @FindBy(partialLinkText = "ADD HOTELROOM")
     public WebElement addHotelRoomLink;
     @FindBy(id = "IDHotel")

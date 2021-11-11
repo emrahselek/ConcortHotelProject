@@ -5,19 +5,13 @@ import concortHotel.pages.*;
 import concortHotel.utilities.ConfigReader;
 import concortHotel.utilities.Driver;
 import org.openqa.selenium.WebElement;
-
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
-
-
-
 import java.util.concurrent.TimeUnit;
 
 public class US006_Sukriye {
@@ -26,28 +20,24 @@ public class US006_Sukriye {
     AdminPage adminPage;
     HotelRoomListPage hotelRoomListPage;
     CreateHotelRoomFormPage createHotelRoomFormPage;
+
     @BeforeMethod
     public void setUp() {
+        Driver.getDriver().get(ConfigReader.getProperty("app_url_qa"));
         mainPage = new MainPage();
         loginPage = new LoginPage();
         adminPage = new AdminPage();
         hotelRoomListPage=new HotelRoomListPage();
         createHotelRoomFormPage=new CreateHotelRoomFormPage();
 
-        Driver.getDriver().get(ConfigReader.getProperty("app_url_qa"));
-        Driver.getDriver().manage().window().maximize();
-        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         mainPage.logInLink.click();
         loginPage.username.sendKeys(ConfigReader.getProperty("manager1_user"));
         loginPage.password.sendKeys(ConfigReader.getProperty("manager1_password"));
         loginPage.loginButton.click();
-       // adminPage.systemManagement.click();
+
         adminPage.hotelManagement.click();
         adminPage.hotelRoomsTab.click();
         createHotelRoomFormPage.addHotelRoomLink.click();
-
-
-
 
     }
     @Test
@@ -59,20 +49,18 @@ public class US006_Sukriye {
         createHotelRoomFormPage.code.sendKeys("RC001");
         createHotelRoomFormPage.name.sendKeys("Sweat Dream");
         createHotelRoomFormPage.location.sendKeys("Downtown-Philadelphia");
-        createHotelRoomFormPage.description.sendKeys("Noise insolation room");
+        createHotelRoomFormPage.description.sendKeys("Noise isolation room");
 
-         Actions actions = new Actions(Driver.getDriver()) ;
-         Thread.sleep(3000);
+        Actions actions = new Actions(Driver.getDriver()) ;
+        Thread.sleep(3000);
+        actions.dragAndDrop(createHotelRoomFormPage.price500, createHotelRoomFormPage.price).build().perform();
+        Select selectRoomType=new Select(createHotelRoomFormPage.roomTypeDropdown);
+        selectRoomType.selectByVisibleText("Studio");
 
-         actions.dragAndDrop(createHotelRoomFormPage.price500, createHotelRoomFormPage.price).build().perform();
-
-         Select selectRoomType=new Select(createHotelRoomFormPage.roomTypeDropdown);
-         selectRoomType.selectByVisibleText("Studio");
-
-         createHotelRoomFormPage.maxAdultCount.sendKeys("2");
-         createHotelRoomFormPage.maxChildrenCount.sendKeys("4");
-         createHotelRoomFormPage.isApprovedCheckbox.click();
-         createHotelRoomFormPage.saveButton.click();
+        createHotelRoomFormPage.maxAdultCount.sendKeys("2");
+        createHotelRoomFormPage.maxChildrenCount.sendKeys("4");
+        createHotelRoomFormPage.isApprovedCheckbox.click();
+        createHotelRoomFormPage.saveButton.click();
         try {
             WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
@@ -84,51 +72,14 @@ public class US006_Sukriye {
 
         createHotelRoomFormPage.okButton.click();
 
-        }
-
-    @Test
-    public void tc_002() throws InterruptedException {
-       //Negative scenario ,I didnt select hotel from hotelDropdown
-        createHotelRoomFormPage.code.sendKeys("RC001");
-        createHotelRoomFormPage.name.sendKeys("Sweat Dream");
-        createHotelRoomFormPage.location.sendKeys("Downtown-Philadelphia");
-        createHotelRoomFormPage.description.sendKeys("Noise insolation room");
-
-        Actions actions = new Actions(Driver.getDriver()) ;
-        Thread.sleep(3000);
-
-        actions.dragAndDrop(createHotelRoomFormPage.price500, createHotelRoomFormPage.price).build().perform();
-
-        Select selectRoomType=new Select(createHotelRoomFormPage.roomTypeDropdown);
-        selectRoomType.selectByVisibleText("Studio");
-
-        createHotelRoomFormPage.maxAdultCount.sendKeys("2");
-        createHotelRoomFormPage.maxChildrenCount.sendKeys("4");
-        createHotelRoomFormPage.isApprovedCheckbox.click();
-        createHotelRoomFormPage.saveButton.click();
-        try {
-            WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
-            WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
-            Assert.assertTrue(popupMessageElement.isDisplayed());
-        } catch (Exception e) {
-            System.out.println("Test2 Failed");
-        }
-
-
-        //createHotelRoomFormPage.okButton.click();
-
     }
 
 
-@Ignore
     @Test
-    public void tc_003() throws InterruptedException {
-        Thread.sleep(3000);
-        Select select = new Select(createHotelRoomFormPage.idDropdown);
-        select.selectByValue("1027");
+    public void tc_002() throws InterruptedException {
+        //Negative scenario ,I didnt select hotel from hotelDropdown
 
-        //Negative scenario I didnt sent room code
-       // createHotelRoomFormPage.code.sendKeys("RC001");
+        createHotelRoomFormPage.code.sendKeys("RC001");
         createHotelRoomFormPage.name.sendKeys("Sweat Dream");
         createHotelRoomFormPage.location.sendKeys("Downtown-Philadelphia");
         createHotelRoomFormPage.description.sendKeys("Noise insolation room");
@@ -151,14 +102,47 @@ public class US006_Sukriye {
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
             Assert.assertFalse(popupMessageElement.isDisplayed());
         } catch (Exception e) {
-            System.out.println("Test3 Passed");
+            System.out.println("Test2 Passed");
         }
-        //createHotelRoomFormPage.okButton.click();
 
     }
 
+    @Test
+    public void tc_003() throws InterruptedException {
+        Thread.sleep(3000);
+        Select select = new Select(createHotelRoomFormPage.idDropdown);
+        select.selectByValue("1027");
 
-    @Ignore
+        //Negative scenario I didnt sent room code
+
+        // createHotelRoomFormPage.code.sendKeys("RC001");
+        createHotelRoomFormPage.name.sendKeys("Sweat Dream");
+        createHotelRoomFormPage.location.sendKeys("Downtown-Philadelphia");
+        createHotelRoomFormPage.description.sendKeys("Noise insolation room");
+
+        Actions actions = new Actions(Driver.getDriver()) ;
+        Thread.sleep(3000);
+
+        actions.dragAndDrop(createHotelRoomFormPage.price500, createHotelRoomFormPage.price).build().perform();
+
+        Select selectRoomType=new Select(createHotelRoomFormPage.roomTypeDropdown);
+        selectRoomType.selectByVisibleText("Studio");
+
+        createHotelRoomFormPage.maxAdultCount.sendKeys("2");
+        createHotelRoomFormPage.maxChildrenCount.sendKeys("4");
+        createHotelRoomFormPage.isApprovedCheckbox.click();
+        createHotelRoomFormPage.saveButton.click();
+
+
+        try {
+            WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
+            WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
+            Assert.assertFalse(popupMessageElement.isDisplayed());
+        } catch (Exception e) {
+            System.out.println("Test3 Passed");
+        }
+
+    }
     @Test
     public void tc_004() throws InterruptedException {
         Thread.sleep(3000);
@@ -184,15 +168,17 @@ public class US006_Sukriye {
         createHotelRoomFormPage.isApprovedCheckbox.click();
         createHotelRoomFormPage.saveButton.click();
 
+
         try {
             WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
             Assert.assertFalse(popupMessageElement.isDisplayed());
         } catch (Exception e) {
-            System.out.println("Test4 Passed");
+            System.out.println("Test4 Failed");
         }
     }
-    @Ignore
+
+
     @Test
     public void tc_005() throws InterruptedException {
         Thread.sleep(3000);
@@ -202,15 +188,13 @@ public class US006_Sukriye {
         createHotelRoomFormPage.code.sendKeys("RC001");
         createHotelRoomFormPage.name.sendKeys("Sweat Dream");
         //Negative Scenario , I didnt sent location
-       // createHotelRoomFormPage.location.sendKeys("Downtown-Philadelphia");
+        // createHotelRoomFormPage.location.sendKeys("Downtown-Philadelphia");
         createHotelRoomFormPage.description.sendKeys("Noise insolation room");
-
-        Actions actions = new Actions(Driver.getDriver()) ;
+        Actions actions = new Actions(Driver.getDriver());
         Thread.sleep(3000);
-
         actions.dragAndDrop(createHotelRoomFormPage.price500, createHotelRoomFormPage.price).build().perform();
 
-        Select selectRoomType=new Select(createHotelRoomFormPage.roomTypeDropdown);
+        Select selectRoomType = new Select(createHotelRoomFormPage.roomTypeDropdown);
         selectRoomType.selectByVisibleText("Studio");
 
         createHotelRoomFormPage.maxAdultCount.sendKeys("2");
@@ -218,21 +202,16 @@ public class US006_Sukriye {
         createHotelRoomFormPage.isApprovedCheckbox.click();
         createHotelRoomFormPage.saveButton.click();
 
+
         try {
-            WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
-            WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
-            Assert.assertTrue(popupMessageElement.isDisplayed());
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 2);
+            WebElement popupMessageElement = wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
+            Assert.assertFalse(popupMessageElement.isDisplayed());
         } catch (Exception e) {
-            System.out.println("Test5 Passed");
+            System.out.println("Test5 Failed");
         }
-        //createHotelRoomFormPage.okButton.click();
 
     }
-
-
-
-
-    @Ignore
     @Test
     public void tc_006() throws InterruptedException {
         Thread.sleep(3000);
@@ -256,6 +235,7 @@ public class US006_Sukriye {
         createHotelRoomFormPage.isApprovedCheckbox.click();
         createHotelRoomFormPage.saveButton.click();
 
+
         try {
             WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
@@ -263,12 +243,13 @@ public class US006_Sukriye {
         } catch (Exception e) {
             System.out.println("Test6 Passed");
         }
+
         //createHotelRoomFormPage.okButton.click();
 
     }
 
 
-    @Ignore
+
     @Test
     public void tc_007() throws InterruptedException {
         Thread.sleep(3000);
@@ -293,6 +274,7 @@ public class US006_Sukriye {
         createHotelRoomFormPage.isApprovedCheckbox.click();
         createHotelRoomFormPage.saveButton.click();
 
+
         try {
             WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
@@ -300,13 +282,10 @@ public class US006_Sukriye {
         } catch (Exception e) {
             System.out.println("Test7 Passed");
         }
-       // createHotelRoomFormPage.okButton.click();
+        // createHotelRoomFormPage.okButton.click();
 
     }
 
-
-
-    @Ignore
     @Test
     public void tc_008() throws InterruptedException {
         Thread.sleep(3000);
@@ -331,19 +310,22 @@ public class US006_Sukriye {
         createHotelRoomFormPage.maxChildrenCount.sendKeys("4");
         createHotelRoomFormPage.isApprovedCheckbox.click();
         createHotelRoomFormPage.saveButton.click();
+
         try {
             WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
             Assert.assertFalse(popupMessageElement.isDisplayed());
         } catch (Exception e) {
-            System.out.println("Test8 Passed");
+            System.out.println("Test8 Failed");
         }
         createHotelRoomFormPage.okButton.click();
 
     }
-    @Ignore
+
+
     @Test
-         public void tc_009() throws InterruptedException {
+    public void tc_009() throws InterruptedException {
+
         Thread.sleep(3000);
         Select select = new Select(createHotelRoomFormPage.idDropdown);
         select.selectByValue("1027");
@@ -367,17 +349,19 @@ public class US006_Sukriye {
         createHotelRoomFormPage.isApprovedCheckbox.click();
         createHotelRoomFormPage.saveButton.click();
 
+
         try {
             WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
             Assert.assertFalse(popupMessageElement.isDisplayed());
         } catch (Exception e) {
-            System.out.println("Test5 Passed");
+            System.out.println("Test5 Failed");
         }
         createHotelRoomFormPage.okButton.click();
 
     }
-    @Ignore
+
+
     @Test
     public void tc_010() throws InterruptedException {
         Thread.sleep(3000);
@@ -400,17 +384,17 @@ public class US006_Sukriye {
         createHotelRoomFormPage.maxAdultCount.sendKeys("2");
         createHotelRoomFormPage.maxChildrenCount.sendKeys("4");
         //Negative scenario ApprovedCheckbox didnt click
-       // createHotelRoomFormPage.isApprovedCheckbox.click();
-        createHotelRoomFormPage.saveButton.click();
+        //createHotelRoomFormPage.isApprovedCheckbox.click();
 
         try {
             WebDriverWait wait=new WebDriverWait(Driver.getDriver(),2);
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
             Assert.assertFalse(popupMessageElement.isDisplayed());
         } catch (Exception e) {
-            System.out.println("Test10 Passed");
+            System.out.println("Test10 Failed");
         }
-        //createHotelRoomFormPage.okButton.click();
+
+        createHotelRoomFormPage.saveButton.click();
 
     }
 
@@ -418,7 +402,9 @@ public class US006_Sukriye {
     @AfterMethod
     public void tearDown(){
 
-        Driver.getDriver().close();
+
+        Driver.closeDriver();
+
 
     }
 
