@@ -23,16 +23,13 @@ public class US006_Sukriye {
 
     @BeforeMethod
     public void setUp() {
-
+        Driver.getDriver().get(ConfigReader.getProperty("app_url_qa"));
         mainPage = new MainPage();
         loginPage = new LoginPage();
         adminPage = new AdminPage();
         hotelRoomListPage=new HotelRoomListPage();
         createHotelRoomFormPage=new CreateHotelRoomFormPage();
 
-        Driver.getDriver().get(ConfigReader.getProperty("app_url_qa"));
-        Driver.getDriver().manage().window().maximize();
-        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         mainPage.logInLink.click();
         loginPage.username.sendKeys(ConfigReader.getProperty("manager1_user"));
         loginPage.password.sendKeys(ConfigReader.getProperty("manager1_password"));
@@ -105,10 +102,8 @@ public class US006_Sukriye {
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
             Assert.assertFalse(popupMessageElement.isDisplayed());
         } catch (Exception e) {
-            System.out.println("Test2 Failed");
+            System.out.println("Test2 Passed");
         }
-
-        //createHotelRoomFormPage.okButton.click();
 
     }
 
@@ -121,9 +116,6 @@ public class US006_Sukriye {
         //Negative scenario I didnt sent room code
 
        // createHotelRoomFormPage.code.sendKeys("RC001");
-
-        // createHotelRoomFormPage.code.sendKeys("RC001");
-
         createHotelRoomFormPage.name.sendKeys("Sweat Dream");
         createHotelRoomFormPage.location.sendKeys("Downtown-Philadelphia");
         createHotelRoomFormPage.description.sendKeys("Noise insolation room");
@@ -399,7 +391,7 @@ public class US006_Sukriye {
             WebElement popupMessageElement=wait.until(ExpectedConditions.visibilityOf(createHotelRoomFormPage.popupMessage));
             Assert.assertFalse(popupMessageElement.isDisplayed());
         } catch (Exception e) {
-            System.out.println("Test10 Passed");
+            System.out.println("Test10 Failed");
         }
 
         createHotelRoomFormPage.saveButton.click();
@@ -411,7 +403,7 @@ public class US006_Sukriye {
     public void tearDown(){
 
 
-        Driver.getDriver().close();
+        Driver.closeDriver();
 
 
     }
