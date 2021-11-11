@@ -237,7 +237,6 @@ public class US010_Mehmet {
         roomReservation.bookThisRoom.click();
 
         roomReservation.here.click();
-        ReusableMethods.waitFor(3);
     }
 /*
     @AfterMethod

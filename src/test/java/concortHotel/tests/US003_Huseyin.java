@@ -408,7 +408,7 @@ public class US003_Huseyin {
         registerPage.saveButton.click();
         ReusableMethods.waitFor(1);
         assertTrue(registerPage.errorMessage.isDisplayed());
-        ReusableMethods.waitFor(3);
+
 
 
     }
