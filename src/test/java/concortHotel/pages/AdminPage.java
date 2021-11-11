@@ -18,6 +18,9 @@ public class AdminPage {
     @FindBy(partialLinkText = "Hotel List")
     public WebElement hotelListLink;
 
+    @FindBy(partialLinkText = "Hotel Rooms")
+    public WebElement hotelRoomsLink;
+
     @FindBy(xpath = "//span[@class='username username-hide-on-mobile']")
     public WebElement usernameRightTop;
 
