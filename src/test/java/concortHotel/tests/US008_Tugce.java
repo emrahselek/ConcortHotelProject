@@ -169,6 +169,7 @@ public class US008_Tugce {
         WebDriverWait amountError = new WebDriverWait(Driver.getDriver(), 10);
         amountError.until(ExpectedConditions.visibilityOf(createRoomReservationPage.popupMessage));
         assertTrue(createRoomReservationPage.popupMessage.isDisplayed());
+        ReusableMethods.waitFor(3);
 
     }
 

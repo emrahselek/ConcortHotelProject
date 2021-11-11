@@ -133,6 +133,7 @@ public class US005_Emrah {
         Driver.getDriver().findElement(By.xpath("//button[normalize-space()='OK']")).click();
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("Error");
         Assert.assertTrue(successfullymessage.booleanValue());
+        ReusableMethods.waitFor(3);
 
     }
 

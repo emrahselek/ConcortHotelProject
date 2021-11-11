@@ -161,6 +161,7 @@ public class US004_Sanal_Hotel_Creation {
         ReusableMethods.waitFor(2);
         createHotelFormPage.saveButton.click();
         Assert.assertTrue(createHotelFormPage.selectGroupMessage.isDisplayed());
+        ReusableMethods.waitFor(3);
     }
 
     @Test()
@@ -180,6 +181,7 @@ public class US004_Sanal_Hotel_Creation {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(createHotelFormPage.fakeDuplicateMessage));
         Assert.assertTrue(createHotelFormPage.fakeDuplicateMessage.isDisplayed());
+        ReusableMethods.waitFor(3);
     }
 
     @AfterMethod()
