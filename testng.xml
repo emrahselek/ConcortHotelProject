@@ -8,8 +8,11 @@
             <class name="concortHotel.tests.US003_Huseyin"/>
             <class name="concortHotel.tests.US004_Sanal_Hotel_Creation"/>
             <class name="concortHotel.tests.US005_Emrah"/>
+            <class name="concortHotel.tests.US006_Sukriye"/>
+            <class name="concortHotel.tests.US007_Merve"/>
             <class name="concortHotel.tests.US008_Tugce"/>
             <class name="concortHotel.tests.US009_Sedef"/>
+            <class name="concortHotel.tests.US010_Mehmet"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
