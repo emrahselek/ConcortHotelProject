@@ -1,15 +1,21 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Parallel TestSuite" parallel="tests" thread-count="2">
+<suite name="Parallel TestSuite" parallel="tests" thread-count="4">
     <test name="Test 1">
         <classes>
+            <class name="concortHotel.tests.US001_Olcay"/>
+            <class name="concortHotel.tests.US002_Abdurrahman_Login_Page"/>
             <class name="concortHotel.tests.US003_Huseyin"/>
+            <class name="concortHotel.tests.US004_Sanal_Hotel_Creation"/>
             <class name="concortHotel.tests.US005_Emrah"/>
-            <class name="concortHotel.tests.US009_Sedef"/>
         </classes>
     </test> <!-- Test -->
     <test name="Test 2">
         <classes>
-            <class name="concortHotel.tests.US004_Sanal_Hotel_Creation"/>
+            <class name="concortHotel.tests.US006_Sukriye"/>
+            <class name="concortHotel.tests.US007_Merve"/>
+            <class name="concortHotel.tests.US008_Tugce"/>
+            <class name="concortHotel.tests.US009_Sedef"/>
+            <class name="concortHotel.tests.US010_Mehmet"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

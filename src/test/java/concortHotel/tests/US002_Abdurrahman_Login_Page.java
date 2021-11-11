@@ -38,7 +38,6 @@ public class US002_Abdurrahman_Login_Page {
         ReusableMethods.waitFor(2);
         System.out.println(adminPage.usernameRightTop.getText());
         assertEquals(adminPage.usernameRightTop.getText(),ConfigReader.getProperty(userName));
-        ReusableMethods.waitFor(3);
 
     }
     @AfterMethod()

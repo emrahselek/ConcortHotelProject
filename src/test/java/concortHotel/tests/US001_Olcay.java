@@ -86,7 +86,6 @@ public class US001_Olcay {
         String emailTitle = Driver.getDriver().getTitle();
         softAssert.assertTrue(emailTitle.contains("Email"));
         softAssert.assertAll();
-        ReusableMethods.waitFor(3);
 
     }
 

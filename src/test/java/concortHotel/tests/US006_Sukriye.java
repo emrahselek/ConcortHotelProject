@@ -396,7 +396,6 @@ public class US006_Sukriye {
         }
 
         createHotelRoomFormPage.saveButton.click();
-        ReusableMethods.waitFor(3);
 
     }
 
