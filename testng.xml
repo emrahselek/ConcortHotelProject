@@ -9,6 +9,7 @@
             <class name="concortHotel.tests.US004_Sanal_Hotel_Creation"/>
             <class name="concortHotel.tests.US005_Emrah"/>
             <class name="concortHotel.tests.US008_Tugce"/>
+            <class name="concortHotel.tests.US009_Sedef"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
