@@ -71,10 +71,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -96,10 +94,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -119,10 +115,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -142,10 +136,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -165,10 +157,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -188,10 +178,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -211,10 +199,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -234,10 +220,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -257,10 +241,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("123456789");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -280,10 +262,8 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("12345678");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
         registerPage.birthDate.sendKeys("11/2/1980");
@@ -303,32 +283,21 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
-        int year=2015;
-        int month =2;
-        int day=11;
-
-        registerPage.birthDate.sendKeys(""+day+"/"+month+"/"+year);
+        registerPage.birthDate.sendKeys(registerPage.dateForDOBIsSmaller18);
         registerPage.saveButton.click();
-
-        LocalDate currentDate = LocalDate.now();
-        LocalDate dateRegistered = LocalDate.of(year,month,day);
-        Period period= Period.between(dateRegistered,currentDate);
-
 
         ReusableMethods.waitFor(1);
         boolean isSuccessful =registerPage.messageWhenSaveClicked.getText().contains("inserted successfully");
-
-        if(isSuccessful==true && period.getYears()<18){
+        if(isSuccessful && registerPage.isAgeBiggerThen18()){
             assertFalse(isSuccessful,"Age is smaller than 18. Law requires age should be bigger than 18");
         }
 
     }
+
 
     @Test
     public void tc_0013(){
@@ -341,25 +310,15 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys("1234567899");
         registerPage.socialSecurityNumber.sendKeys("123456789");
         registerPage.drivingLicenseNo.sendKeys("12345");
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText("United States");
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText("New York");
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,"United States");
+        ReusableMethods.selectFromDropDown(registerPage.idState,"New York");
         registerPage.address.sendKeys("123 Apple Street");
         registerPage.workingSector.sendKeys("IT");
-        LocalDate currentDate = LocalDate.now();
-        int year=currentDate.plusYears(1).getYear();
-        int month =2;
-        int day=11;
-
-        registerPage.birthDate.sendKeys(""+day+"/"+month+"/"+year);
+        registerPage.birthDate.sendKeys(registerPage.dateForDOBAfterCurrentDate);
         registerPage.saveButton.click();
-        LocalDate dateRegistered = LocalDate.of(year,month,day);
-
         ReusableMethods.waitFor(1);
         boolean isSuccessful =registerPage.messageWhenSaveClicked.getText().contains("inserted successfully");
-
-        if(isSuccessful==true && dateRegistered.isAfter(currentDate)){
+        if(isSuccessful && registerPage.isDOBAfterToday()){
             assertFalse(isSuccessful,"Date of Birth can not be after Today's date");
         }
 
@@ -370,8 +329,6 @@ public class US003_Huseyin {
         registerPage = new RegisterPage();
         return registerPage.requiredDataForNegativeTest();
     }
-
-
 
     @Test(dataProvider = "getData")
     public void tc_0014(String fullName,String phoneNumber,String SSN,String drivingLicence,String country, String states, String address, String workingSector, String dob){
@@ -384,18 +341,14 @@ public class US003_Huseyin {
         registerPage.phoneNo.sendKeys(phoneNumber);
         registerPage.socialSecurityNumber.sendKeys(SSN);
         registerPage.drivingLicenseNo.sendKeys(drivingLicence);
-        Select selectCountry = new Select(registerPage.idCountry);
-        selectCountry.selectByVisibleText(country);
-        Select selectStates = new Select(registerPage.idState);
-        selectStates.selectByVisibleText(states);
+        ReusableMethods.selectFromDropDown(registerPage.idCountry,country);
+        ReusableMethods.selectFromDropDown(registerPage.idState,states);
         registerPage.address.sendKeys(address);
         registerPage.workingSector.sendKeys(workingSector);
         registerPage.birthDate.sendKeys(dob);
         registerPage.saveButton.click();
         ReusableMethods.waitFor(1);
         assertTrue(registerPage.errorMessage.isDisplayed());
-
-
 
     }
 
