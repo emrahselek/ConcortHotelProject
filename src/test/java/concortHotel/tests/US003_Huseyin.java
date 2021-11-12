@@ -10,6 +10,7 @@ import concortHotel.utilities.ReusableMethods;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -41,7 +42,7 @@ public class US003_Huseyin {
     registerPage = new RegisterPage();
     String name = faker.name().firstName();
     registerPage.userName.sendKeys(name+"12");
-    registerPage.password.sendKeys("Sa174656!");
+    registerPage.password.sendKeys("Sa174");
     registerPage.email.sendKeys(faker.internet().emailAddress());
     registerPage.fullName.sendKeys(name+ " Araba");
     registerPage.phoneNo.sendKeys("1234567899");
@@ -414,8 +415,8 @@ public class US003_Huseyin {
     }
 
     @AfterMethod
-    public void tearDown() throws IOException {
-        ReusableMethods.getScreenshot("US003_Huseyin");
+    public void tearDown(ITestResult result) throws IOException {
+        ReusableMethods.getScreenshotIfFails("US003_Huseyin",result);
         Driver.closeDriver();
     }
 

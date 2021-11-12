@@ -3,6 +3,8 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.ITestResult;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -27,6 +29,26 @@ public class ReusableMethods {
         return target;
     }
 
+    public static String getScreenshotIfFails(String name,ITestResult result) throws IOException {
+
+        // naming the screenshot with the current date to avoid duplication
+        // runs when test fails
+
+        String target = null;
+        if (ITestResult.FAILURE == result.getStatus()) {
+
+            String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+            TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+            File source = ts.getScreenshotAs(OutputType.FILE);
+            target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png";
+            File finalDestination = new File(target);
+            FileUtils.copyFile(source, finalDestination);
+
+        }
+
+        return target;
+    }
+
     //========Switching Window=====//
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
@@ -45,6 +67,7 @@ public class ReusableMethods {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
+
     //==========Return a list of string given a list of Web Element====////
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
@@ -85,18 +108,22 @@ public class ReusableMethods {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
     public static WebElement waitForClickablility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -107,6 +134,7 @@ public class ReusableMethods {
             }
         }
     }
+
     public static void waitForPageToLoad(long timeOutInSeconds) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -122,6 +150,7 @@ public class ReusableMethods {
                     "Timeout waiting for Page Load Request to complete after " + timeOutInSeconds + " seconds");
         }
     }
+
     //======Fluent Wait====//
     public static WebElement fluentWait(final WebElement webElement, int timeinsec) {
         //FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver()).withTimeout(timeinsec, TimeUnit.SECONDS).pollingEvery(timeinsec, TimeUnit.SECONDS);
@@ -137,11 +166,9 @@ public class ReusableMethods {
     }
 
 
-
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
-
 
 
     public static void selectCheckBox(WebElement element, boolean check) {
@@ -157,7 +184,6 @@ public class ReusableMethods {
     }
 
 
-
     public static WebElement selectRandomTextFromDropdown(Select select) {
         Random random = new Random();
         List<WebElement> weblist = select.getOptions();
@@ -166,18 +192,20 @@ public class ReusableMethods {
         return select.getFirstSelectedOption();
     }
 
-    public static void selectFromDropDown(WebElement selectData, String selectOption){
+    public static void selectFromDropDown(WebElement selectData, String selectOption) {
         Select selectElement = new Select(selectData);
         selectElement.selectByVisibleText(selectOption);
     }
 
-    public static void selectFromDropDown(WebElement selectData, int indexNumber){
+    public static void selectFromDropDown(WebElement selectData, int indexNumber) {
         Select selectElement = new Select(selectData);
         selectElement.selectByIndex(indexNumber);
     }
 
-    public static void seletFromDropDown (WebElement selectData, String value){
+    public static void seletFromDropDown(WebElement selectData, String value) {
         Select selectElement = new Select(selectData);
         selectElement.selectByValue(value);
     }
+
+
 }
