@@ -207,5 +207,10 @@ public class ReusableMethods {
         selectElement.selectByValue(value);
     }
 
+    public static void actionDragDrop(WebElement takeFrom, WebElement dropTo){
+        Actions actions = new Actions(Driver.getDriver()) ;
+        actions.dragAndDrop(takeFrom, dropTo).build().perform();
+        waitFor(1);
+    }
 
 }
