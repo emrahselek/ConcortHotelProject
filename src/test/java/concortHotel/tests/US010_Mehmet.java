@@ -238,10 +238,10 @@ public class US010_Mehmet {
 
         roomReservation.here.click();
     }
-/*
+
     @AfterMethod
     public void tearDown() throws IOException {
-        ReusableMethods.getScreenshot("US003_Huseyin");
+//        ReusableMethods.getScreenshot("US003_Huseyin");
         Driver.closeDriver();
-    }*/
+    }
 }

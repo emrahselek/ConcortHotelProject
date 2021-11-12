@@ -346,7 +346,7 @@ public class US003_Huseyin {
 
     @AfterMethod
     public void tearDown(ITestResult result) throws IOException {
-        ReusableMethods.getScreenshotIfFails(result);
+//        ReusableMethods.getScreenshotIfFails(result);
         Driver.closeDriver();
     }
 

@@ -138,9 +138,9 @@ public class US005_Emrah {
 
     @AfterMethod()
     public void tearDown(ITestResult result) throws IOException {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            ReusableMethods.getScreenshot("US005_Emrah");
-        }
+//        if (ITestResult.FAILURE == result.getStatus()) {
+//            ReusableMethods.getScreenshot("US005_Emrah");
+//        }
         Driver.closeDriver();
     }
 

@@ -149,13 +149,13 @@ public class US009_Sedef {
         editRoomReservationPage.saveButton.click();
         System.out.println("the save button works");
 
-        if (ITestResult.FAILURE == result.getStatus()) {
-            ReusableMethods.getScreenshot("US009_Sedef");
-
-        }
-        else {
-            System.out.println("the reservation is saved. there is no pop up message");
-        }
+//        if (ITestResult.FAILURE == result.getStatus()) {
+//            ReusableMethods.getScreenshot("US009_Sedef");
+//
+//        }
+//        else {
+//            System.out.println("the reservation is saved. there is no pop up message");
+//        }
         Driver.closeDriver();
 
 

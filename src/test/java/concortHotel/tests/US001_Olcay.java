@@ -91,9 +91,9 @@ public class US001_Olcay {
 
     @AfterMethod()
     public void tearDown(ITestResult result) throws IOException {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            ReusableMethods.getScreenshot("US001_Olcay");
-        }
+//        if (ITestResult.FAILURE == result.getStatus()) {
+////            ReusableMethods.getScreenshot("US001_Olcay");
+//        }
         Driver.closeDriver();
     }
 
