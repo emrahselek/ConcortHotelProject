@@ -29,14 +29,14 @@ public class ReusableMethods {
         return target;
     }
 
-    public static String getScreenshotIfFails(String name,ITestResult result) throws IOException {
+    public static String getScreenshotIfFails(ITestResult result) throws IOException {
 
         // naming the screenshot with the current date to avoid duplication
         // runs when test fails
 
         String target = null;
         if (ITestResult.FAILURE == result.getStatus()) {
-
+            String name = " "+result.getInstanceName()+ " "+result.getName()+" ";
             String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
             TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
             File source = ts.getScreenshotAs(OutputType.FILE);
