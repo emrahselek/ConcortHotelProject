@@ -50,6 +50,7 @@ public class US007_Merve {
         editHotelRoomPage.save.click();
         ReusableMethods.waitFor(3);
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("HotelRoom was updated successfully");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(successfullymessage.booleanValue());
 
     }
@@ -61,6 +62,7 @@ public class US007_Merve {
         editHotelRoomPage.save.click();
         ReusableMethods.waitFor(3);
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("HotelRoom was updated successfully");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(successfullymessage.booleanValue());
 
     }
@@ -72,6 +74,7 @@ public class US007_Merve {
         editHotelRoomPage.save.click();
         ReusableMethods.waitFor(3);
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("HotelRoom was updated successfully");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(successfullymessage.booleanValue());
     }
     @Test
@@ -82,6 +85,7 @@ public class US007_Merve {
         editHotelRoomPage.save.click();
         ReusableMethods.waitFor(3);
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("HotelRoom was updated successfully");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(successfullymessage.booleanValue());
 
     }
@@ -95,6 +99,7 @@ public class US007_Merve {
         editHotelRoomPage.save.click();
         ReusableMethods.waitFor(3);
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("HotelRoom was updated successfully");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(successfullymessage.booleanValue());
     }
     @Test
@@ -105,6 +110,7 @@ public class US007_Merve {
         editHotelRoomPage.save.click();
         ReusableMethods.waitFor(3);
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("HotelRoom was updated successfully");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(successfullymessage.booleanValue());
     }
     @Test
@@ -115,6 +121,7 @@ public class US007_Merve {
         editHotelRoomPage.save.click();
         ReusableMethods.waitFor(3);
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("HotelRoom was updated successfully");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(successfullymessage.booleanValue());
     }
     @Test
@@ -125,6 +132,7 @@ public class US007_Merve {
         editHotelRoomPage.save.click();
         ReusableMethods.waitFor(3);
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("HotelRoom was updated successfully");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(successfullymessage.booleanValue());
 
     }
@@ -135,6 +143,7 @@ public class US007_Merve {
         editHotelRoomPage.save.click();
         ReusableMethods.waitFor(3);
         Boolean successfullymessage = Driver.getDriver().getPageSource().contains("HotelRoom was updated successfully");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(successfullymessage.booleanValue());
     }
     @Test
@@ -146,6 +155,7 @@ public class US007_Merve {
         Assert.assertEquals(editHotelRoomPage.popupMessage.getText(),"Would you like to continue?");
         editHotelRoomPage.okBtn.click();
         Boolean errorMessage = Driver.getDriver().getPageSource().contains("Error");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(errorMessage.booleanValue());
         editHotelRoomPage.okButton.click();
 
