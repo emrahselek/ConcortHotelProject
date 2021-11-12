@@ -1,5 +1,4 @@
 package concortHotel.tests;
-
 import com.github.javafaker.Faker;
 import concortHotel.pages.LoginPage;
 import concortHotel.pages.MainPage;
@@ -7,19 +6,12 @@ import concortHotel.pages.RegisterPage;
 import concortHotel.utilities.ConfigReader;
 import concortHotel.utilities.Driver;
 import concortHotel.utilities.ReusableMethods;
-
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.Period;
 import static org.testng.Assert.*;
 public class US003_Huseyin {
 
@@ -42,7 +34,7 @@ public class US003_Huseyin {
     registerPage = new RegisterPage();
     String name = faker.name().firstName();
     registerPage.userName.sendKeys(name+"12");
-    registerPage.password.sendKeys("Sa174");
+    registerPage.password.sendKeys("Sa174656!");
     registerPage.email.sendKeys(faker.internet().emailAddress());
     registerPage.fullName.sendKeys(name+ " Araba");
     registerPage.phoneNo.sendKeys("1234567899");
