@@ -42,9 +42,9 @@ public class US002_Abdurrahman_Login_Page {
     }
     @AfterMethod()
     public void tearDown(ITestResult result) throws IOException {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            ReusableMethods.getScreenshot("screenshot");
-        }
+//        if (ITestResult.FAILURE == result.getStatus()) {
+//            ReusableMethods.getScreenshot("screenshot");
+//        }
         Driver.closeDriver();
     }
 

@@ -90,10 +90,17 @@ public class US009_Sedef {
     public void US009_testCase4() {
 
 
+<<<<<<< HEAD
          editRoomReservationPage = new EditRoomReservationPage();
 
          editRoomReservationPage.dateEnd.clear();
          editRoomReservationPage.dateEnd.sendKeys("12/20/2020");
+=======
+        editRoomReservationPage = new EditRoomReservationPage();
+
+        editRoomReservationPage.dateEnd.clear();
+        editRoomReservationPage.dateEnd.sendKeys("12/20/2020");
+>>>>>>> main
         editRoomReservationPage = new EditRoomReservationPage();
 
         editRoomReservationPage.dateEnd.clear();
@@ -107,10 +114,17 @@ public class US009_Sedef {
     public void US009_testCase5() {
 
 
+<<<<<<< HEAD
          editRoomReservationPage = new EditRoomReservationPage();
          editRoomReservationPage.contactNameSurname.clear();
 
          editRoomReservationPage.contactNameSurname.sendKeys("Sedef Gunerhan");
+=======
+        editRoomReservationPage = new EditRoomReservationPage();
+        editRoomReservationPage.contactNameSurname.clear();
+
+        editRoomReservationPage.contactNameSurname.sendKeys("Sedef Gunerhan");
+>>>>>>> main
 
         editRoomReservationPage = new EditRoomReservationPage();
         editRoomReservationPage.contactNameSurname.clear();
@@ -141,6 +155,12 @@ public class US009_Sedef {
         editRoomReservationPage.notes.sendKeys("Please bring extra mattress to the room");
 
     }
+<<<<<<< HEAD
+=======
+
+    @AfterMethod
+    public void tearDown(ITestResult result) throws IOException {
+>>>>>>> main
 
          @AfterMethod
          public void tearDown(ITestResult result) throws IOException {
@@ -152,11 +172,23 @@ public class US009_Sedef {
              if (ITestResult.FAILURE == result.getStatus()) {
                  ReusableMethods.getScreenshot("US009_Sedef");
 
+<<<<<<< HEAD
              }
              else {
                  System.out.println("the reservation is saved. there is no pop up message");
              }
          Driver.closeDriver();
+
+=======
+//        if (ITestResult.FAILURE == result.getStatus()) {
+//            ReusableMethods.getScreenshot("US009_Sedef");
+//
+//        }
+//        else {
+//            System.out.println("the reservation is saved. there is no pop up message");
+//        }
+        Driver.closeDriver();
+>>>>>>> main
 
 
     }

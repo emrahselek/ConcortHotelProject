@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Testing Google Apps">
+    <listeners>
+        <listener class-name="concortHotel.utilities.Listeners"></listener>
+        
+    </listeners>
+    
     <test name="Smoke">
         <classes>
             <class name="concortHotel.tests.US001_Olcay"/>
@@ -12,7 +17,7 @@
             <class name="concortHotel.tests.US007_Merve"/>
             <class name="concortHotel.tests.US008_Tugce"/>
             <class name="concortHotel.tests.US009_Sedef"/>
-            <class name="concortHotel.tests.US010_"/>
+            <class name="concortHotel.tests.US010_Mehmet"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

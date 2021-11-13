@@ -176,9 +176,9 @@ public class US008_Tugce {
 
     @AfterMethod()
     public void tearDown(ITestResult result) throws IOException {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            ReusableMethods.getScreenshot("US008_Tugce");
-        }
+//        if (ITestResult.FAILURE == result.getStatus()) {
+//            ReusableMethods.getScreenshot("US008_Tugce");
+//        }
         Driver.closeDriver();
     }
 
