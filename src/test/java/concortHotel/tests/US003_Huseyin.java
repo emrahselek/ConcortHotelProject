@@ -50,6 +50,7 @@ public class US003_Huseyin {
     ReusableMethods.waitFor(1);
     assertTrue(registerPage.messageWhenOkClicked.getText().contains("inserted successfully"));
 
+
     }
 
     @Test
